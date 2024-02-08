@@ -5,6 +5,7 @@ int main() {
   int velosDispos = 20;
   int capacite = 20;
   int choix;
+  int duree;
   do {
     cout << "****** Gestion d'une station Vélô ******" << endl << endl;
     cout << "-----------------------------------------" << endl;
@@ -18,21 +19,29 @@ int main() {
     cout << "4. Quitter l'application" << endl << endl;
     cin >> choix;
     cout << " Votre choix est,";
+    
     switch (choix) {
     case 1:
+      velosDispos --;
       std::cout << " Emprunter un vélô électrique\n";
       break;
 
     case 2:
+      velosDispos ++;
       std::cout << " Restituer un vélô électrique\n";
       break;
 
     case 3:
       std::cout << " Estimer le coût de la location\n";
+      std::cout << " Combien de temps souhaitez-vous conserver le vélo ? ( min )\n";
+      std::cin >> duree;
+      std::cout << " Le prix serra de :" << (duree*coutHoraire)/60 << "€\n" ;
       break;
 
     case 4:
       std::cout << " Quitter l'application\n";
+      std::cout << "\n";
+      std::cout << " Merci de votre uttilisation, AU-REVOIR !!\n";
       break;
 
     default:
